@@ -1,0 +1,1491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Phamo's Wash and Detailing — Houston</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Barlow:wght@300;400;500&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+
+<style>
+/* =========================================================
+   COMBINED STYLE:
+   - Apple minimal: white, clean spacing, soft borders/shadows
+   - Previous design: bold type, subtle diagonal hero, marquee ticker
+   - Keep RED accent
+   - Normal cursor
+   ========================================================= */
+
+/* Reset */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; }
+body{
+  background: #fff;
+  color: #101114;
+  font-family: 'Barlow', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  cursor: default;
+}
+::selection{ background: rgba(232,0,61,0.16); }
+
+/* Tokens */
+:root{
+  --red: #E8003D;
+  --red2: #ff1a50;
+
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --surface2: #F7F7F8;
+
+  --text: #101114;
+  --muted: #6B7280;
+  --muted2: #9CA3AF;
+
+  --border: rgba(16,17,20,0.10);
+  --border2: rgba(16,17,20,0.16);
+
+  --shadowSoft: 0 10px 30px rgba(0,0,0,0.10);
+  --shadow: 0 18px 48px rgba(0,0,0,0.12);
+
+  --radius: 18px;
+  --radius2: 26px;
+
+  --max: 1120px;
+  --pad: 24px;
+
+  --font-display: 'Barlow Condensed', ui-sans-serif, system-ui;
+  --font-italic: 'Playfair Display', serif;
+  --font-body: 'Barlow', ui-sans-serif, system-ui;
+}
+
+/* Layout helpers */
+.container{ max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
+.section{ padding: 92px 0; }
+.section-tight{ padding: 72px 0; }
+.kicker{
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--red);
+}
+.h1{
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(52px, 7vw, 110px);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+.h2{
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(34px, 4.2vw, 64px);
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+.h2 em{
+  font-family: var(--font-italic);
+  font-style: italic;
+  font-weight: 400;
+  text-transform: none;
+  color: var(--red);
+  letter-spacing: 0;
+}
+.p{
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.9;
+}
+.p.lead{ font-size: 18px; }
+
+/* Buttons (Apple-minimal) */
+.btn{
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 14px 18px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+  user-select: none;
+}
+.btn:active{ transform: scale(0.985); }
+.btn-primary{
+  background: var(--red);
+  color: #fff;
+  box-shadow: 0 14px 28px rgba(232,0,61,0.22);
+}
+.btn-primary:hover{ background: var(--red2); }
+.btn-secondary{
+  background: rgba(255,255,255,0.85);
+  border-color: var(--border);
+  color: var(--text);
+}
+.btn-secondary:hover{ background: var(--surface2); border-color: var(--border2); }
+.icon{ width: 18px; height: 18px; }
+
+/* Cards */
+.card{
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: var(--radius2);
+  box-shadow: var(--shadowSoft);
+}
+.card.soft{
+  background: var(--surface2);
+  box-shadow: none;
+}
+
+/* =========================================================
+   NAV
+   ========================================================= */
+.nav{
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(255,255,255,0.82);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner{
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* Logo (your provided image) */
+.brand{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 220px;
+}
+.brand-logo{
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+}
+.nav-links{
+  display: flex; align-items: center; gap: 18px;
+}
+.nav-links a{
+  font-family: var(--font-display);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(16,17,20,0.62);
+  padding: 10px 10px;
+  border-radius: 999px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.nav-links a:hover{
+  background: var(--surface2);
+  color: var(--text);
+}
+.nav-cta{ display: flex; gap: 10px; }
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero{ padding: 42px 0 18px; }
+.hero-shell{
+  position: relative;
+  overflow: hidden;
+  border-radius: 30px;
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, #ffffff 0%, #fbfbfc 100%);
+  box-shadow: var(--shadow);
+}
+.hero-redbar{ height: 4px; background: var(--red); }
+.hero-grid{
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 0;
+  min-height: 560px;
+}
+.hero-left{ padding: 48px 44px 40px; position: relative; z-index: 2; }
+.hero-right{
+  position: relative;
+  border-left: 1px solid var(--border);
+  background:
+    radial-gradient(ellipse 60% 60% at 70% 40%, rgba(232,0,61,0.08) 0%, transparent 60%),
+    linear-gradient(135deg, #f7f7f8 0%, #ffffff 70%);
+  overflow: hidden;
+}
+.hero-right::before{
+  content:"";
+  position:absolute; inset:-30% -30% -30% -30%;
+  background: linear-gradient(135deg, rgba(16,17,20,0.03), rgba(16,17,20,0));
+  transform: rotate(12deg);
+}
+.hero-media{
+  position:absolute; inset: 22px;
+  border-radius: 22px;
+  border: 1px dashed rgba(16,17,20,0.18);
+  background: rgba(255,255,255,0.55);
+  backdrop-filter: blur(10px);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap: 10px;
+  color: var(--muted2);
+  text-align:center;
+  padding: 22px;
+}
+.hero-media .pill{
+  display:inline-flex; align-items:center; gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.75);
+  color: rgba(16,17,20,0.68);
+  font-size: 12px;
+}
+.hero-top{
+  display:flex; flex-wrap:wrap;
+  gap: 12px;
+  align-items:center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+.badge{
+  display:inline-flex; align-items:center; gap: 10px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.72);
+  backdrop-filter: blur(10px);
+  color: rgba(16,17,20,0.72);
+  font-size: 13px;
+}
+.badge .stars{ color:#f5b301; letter-spacing: 1px; }
+.badge .dot{ width: 6px; height: 6px; border-radius: 50%; background: var(--red); }
+.hero-h1{ margin-top: 10px; }
+.hero-h1 .line1{ display:block; color: var(--text); }
+.hero-h1 .line2{
+  display:block;
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(16,17,20,0.18);
+  opacity: 1;
+}
+.hero-h1 .line3{
+  display:block;
+  font-family: var(--font-italic);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--red);
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 0.60em;
+  line-height: 1.15;
+  margin-top: 8px;
+}
+.hero-sub{ margin-top: 16px; max-width: 560px; }
+.hero-ctas{ display:flex; flex-wrap:wrap; gap: 12px; margin-top: 22px; }
+.hero-points{
+  margin-top: 26px;
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.point{
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.75);
+  border-radius: 16px;
+  padding: 14px;
+}
+.point strong{
+  display:block;
+  font-family: var(--font-display);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+.point span{
+  display:block;
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+/* Ticker */
+.ticker{
+  margin-top: 16px;
+  border: 1px solid rgba(232,0,61,0.22);
+  background: rgba(232,0,61,0.06);
+  border-radius: 999px;
+  overflow:hidden;
+}
+.ticker-track{ display:flex; width:max-content; animation: ticker 24s linear infinite; }
+.ticker-item{
+  display:flex; align-items:center; gap: 10px;
+  padding: 12px 18px;
+  font-family: var(--font-display);
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(232,0,61,0.95);
+  white-space: nowrap;
+}
+.ticker-dot{ width: 6px; height: 6px; border-radius: 50%; background: rgba(232,0,61,0.45); }
+@keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+/* Stats */
+.stats{ margin-top: 16px; display:grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.stat{
+  border: 1px solid var(--border);
+  background: #fff;
+  border-radius: 18px;
+  padding: 18px;
+}
+.stat .num{
+  font-family: var(--font-display);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  font-size: 34px;
+  line-height: 1.1;
+}
+.stat .lbl{
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+/* =========================================================
+   EDUCATION / BENEFITS
+   ========================================================= */
+.grid-2{ display:grid; grid-template-columns: 1fr 1fr; gap: 22px; align-items:start; }
+.benefits{ margin-top: 18px; display:grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.benefit{
+  border: 1px solid var(--border);
+  background: #fff;
+  border-radius: 18px;
+  padding: 18px;
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.benefit:hover{
+  transform: translateY(-2px);
+  border-color: rgba(232,0,61,0.28);
+  box-shadow: var(--shadowSoft);
+}
+.mini{
+  width: 38px; height: 38px;
+  border-radius: 14px;
+  display:flex; align-items:center; justify-content:center;
+  background: rgba(232,0,61,0.10);
+  color: var(--red);
+  margin-bottom: 10px;
+}
+.benefit strong{
+  display:block;
+  font-family: var(--font-display);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+}
+.benefit span{
+  display:block;
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 7px;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   GALLERY
+   ========================================================= */
+.gallery-head{
+  display:flex; align-items:flex-end; justify-content:space-between;
+  gap: 14px; flex-wrap: wrap;
+}
+.gallery-hint{
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display:flex; align-items:center; gap: 8px;
+}
+.gallery{
+  margin-top: 16px;
+  overflow-x:auto;
+  display:flex;
+  gap: 14px;
+  padding: 10px 2px 6px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(16,17,20,0.18) transparent;
+  cursor: grab;
+}
+.gallery:active{ cursor: grabbing; }
+.gallery::-webkit-scrollbar{ height: 6px; }
+.gallery::-webkit-scrollbar-thumb{ background: rgba(16,17,20,0.18); border-radius: 999px; }
+.gcard{
+  flex: 0 0 360px;
+  border: 1px solid var(--border);
+  background: #fff;
+  border-radius: var(--radius2);
+  overflow:hidden;
+  box-shadow: var(--shadowSoft);
+}
+.gimg{
+  height: 220px;
+  background: linear-gradient(135deg, #f1f5f9 0%, #ffffff 70%);
+  display:flex; align-items:center; justify-content:center;
+  color: var(--muted2);
+  position: relative;
+}
+.gstep{
+  position:absolute; top: 14px; left: 14px;
+  background: rgba(255,255,255,0.86);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 8px 10px;
+  font-family: var(--font-display);
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.66rem;
+  color: rgba(16,17,20,0.72);
+  backdrop-filter: blur(10px);
+}
+.gbody{ padding: 18px 18px 20px; }
+.gbody h4{
+  font-family: var(--font-display);
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.92rem;
+}
+.gbody p{
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
+.about-wrap{
+  display:grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 22px;
+  align-items: stretch;
+}
+.about-photo{ min-height: 320px; position: relative; overflow:hidden; }
+.media-placeholder{
+  position:absolute; inset: 18px;
+  border-radius: 22px;
+  border: 1px dashed rgba(16,17,20,0.18);
+  background: rgba(255,255,255,0.55);
+  display:flex; flex-direction:column;
+  align-items:center; justify-content:center;
+  gap: 10px;
+  color: var(--muted2);
+  text-align:center;
+  padding: 22px;
+}
+.media-placeholder .pill{
+  display:inline-flex; align-items:center; gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.78);
+  color: rgba(16,17,20,0.68);
+  font-size: 12px;
+}
+
+/* =========================================================
+   PRICING / MENU (CLEANER, NO TABLES)
+   ========================================================= */
+.menu-head{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.menu-note{
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+  max-width: 520px;
+}
+.menu-grid{
+  margin-top: 18px;
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.menu-card{ padding: 22px; position: relative; }
+.menu-top{
+  display:flex; align-items:flex-start; justify-content:space-between; gap: 12px;
+}
+.menu-title{
+  font-family: var(--font-display);
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 1.05rem;
+}
+.menu-sub{ color: var(--muted); font-size: 13px; line-height: 1.6; margin-top: 6px; }
+.bad-pill{
+  font-family: var(--font-display);
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 0.62rem;
+  color: var(--red);
+  background: rgba(232,0,61,0.10);
+  border: 1px solid rgba(232,0,61,0.18);
+  padding: 8px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.menu-list{
+  list-style: none;
+  margin-top: 14px;
+  display:grid;
+  gap: 10px;
+}
+.menu-list li{
+  display:flex;
+  gap: 10px;
+  align-items:flex-start;
+  color: rgba(16,17,20,0.68);
+  font-size: 14px;
+  line-height: 1.6;
+}
+.menu-list li::before{
+  content:"";
+  margin-top: 7px;
+  width: 6px; height: 6px;
+  border-radius: 999px;
+  background: rgba(232,0,61,0.55);
+  flex-shrink: 0;
+}
+.menu-meta{
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+  display:flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.tag{
+  padding: 9px 11px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.70);
+  color: rgba(16,17,20,0.62);
+  font-size: 13px;
+}
+
+/* Add-ons */
+.addons{ margin-top: 12px; padding: 18px; }
+.chips{ display:flex; flex-wrap:wrap; gap: 10px; margin-top: 10px; }
+.chip{
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.70);
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* =========================================================
+   QUOTE
+   ========================================================= */
+.form-wrap{
+  display:grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 22px;
+  align-items: start;
+}
+.form{ overflow:hidden; }
+.progress{
+  display:flex;
+  border-bottom: 1px solid var(--border);
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(10px);
+}
+.pstep{
+  flex:1;
+  padding: 16px 18px;
+  display:flex; align-items:center; gap: 10px;
+  color: rgba(16,17,20,0.62);
+  font-family: var(--font-display);
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.68rem;
+  border-right: 1px solid var(--border);
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.pstep:last-child{ border-right:none; }
+.pstep.active{ color: var(--text); background: rgba(232,0,61,0.08); }
+.pstep.done{ color: var(--red); }
+.pnum{
+  width: 26px; height: 26px;
+  border-radius: 999px;
+  border: 1px solid currentColor;
+  display:flex; align-items:center; justify-content:center;
+  font-size: 0.66rem;
+}
+.pstep.done .pnum{
+  background: var(--red);
+  border-color: var(--red);
+  color: #fff;
+}
+.form-body{ padding: 22px; }
+.step{ display:none; }
+.step.active{ display:block; }
+.step h3{
+  font-family: var(--font-display);
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 1.15rem;
+}
+.step p{ margin-top: 8px; color: var(--muted); font-size: 14px; line-height: 1.7; }
+
+.field-grid{ margin-top: 16px; display:grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.field-grid.one{ grid-template-columns: 1fr; }
+.field label{
+  display:block;
+  font-family: var(--font-display);
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.62rem;
+  color: rgba(16,17,20,0.55);
+  margin-bottom: 8px;
+}
+.input, .select, .textarea{
+  width:100%;
+  border: 1px solid var(--border);
+  background: #fff;
+  border-radius: 14px;
+  padding: 14px 14px;
+  font-size: 15px;
+  color: var(--text);
+  outline: none;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+.textarea{ min-height: 110px; resize: vertical; }
+.input:focus, .select:focus, .textarea:focus{
+  border-color: rgba(232,0,61,0.45);
+  box-shadow: 0 0 0 4px rgba(232,0,61,0.12);
+}
+.help{ margin-top: 10px; color: var(--muted2); font-size: 12px; }
+
+.form-nav{
+  display:flex; align-items:center; justify-content:space-between;
+  gap: 12px;
+  padding: 16px 22px 22px;
+  border-top: 1px solid var(--border);
+}
+.dots{ display:flex; gap: 8px; }
+.dot{ width: 8px; height: 8px; border-radius: 999px; background: rgba(16,17,20,0.12); }
+.dot.active{ background: var(--red); }
+.btn-link{
+  border:none; background: transparent;
+  color: rgba(16,17,20,0.62);
+  padding: 10px 12px;
+  border-radius: 999px;
+}
+.btn-link:hover{ background: var(--surface2); color: var(--text); }
+
+.success{
+  display:none;
+  padding: 32px 22px;
+  text-align:center;
+}
+.check{
+  width: 54px; height: 54px;
+  border-radius: 999px;
+  background: var(--red);
+  display:grid; place-items:center;
+  margin: 0 auto 14px;
+  box-shadow: 0 14px 30px rgba(232,0,61,0.22);
+}
+.success h3{
+  font-family: var(--font-display);
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 1.35rem;
+}
+.success p{ margin-top: 8px; color: var(--muted); line-height: 1.8; }
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.footer{
+  border-top: 1px solid var(--border);
+  padding: 44px 0;
+  background: #fff;
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 22px;
+}
+.footer h4{
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(16,17,20,0.55);
+}
+.footer a{ color: var(--muted); }
+.footer a:hover{ color: var(--text); }
+.footer p{ color: var(--muted); line-height: 1.9; font-size: 14px; }
+.footer-bottom{
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+  display:flex; flex-wrap:wrap; gap:10px;
+  justify-content: space-between;
+  color: var(--muted2);
+  font-size: 13px;
+}
+
+/* Responsive */
+@media (max-width: 980px){
+  .hero-grid{ grid-template-columns: 1fr; }
+  .hero-right{ min-height: 260px; border-left: none; border-top: 1px solid var(--border); }
+  .hero-left{ padding: 40px 22px; }
+  .hero-media{ inset: 16px; }
+  .hero-points{ grid-template-columns: 1fr; }
+  .stats{ grid-template-columns: repeat(2, 1fr); }
+  .grid-2{ grid-template-columns: 1fr; }
+  .benefits{ grid-template-columns: repeat(2, 1fr); }
+  .about-wrap{ grid-template-columns: 1fr; }
+  .form-wrap{ grid-template-columns: 1fr; }
+  .nav-links{ display:none; }
+  .menu-grid{ grid-template-columns: 1fr; }
+  .brand-logo{ height: 40px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="#top" aria-label="Phamo's Home">
+      <!-- Your uploaded logo (embedded as data URL so this file is standalone) -->
+      <img
+        class="brand-logo"
+        alt="Phamo's Detailing logo"
+        src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAlgCWAAD/4RCURXhpZgAA..."
+      />
+    </a>
+
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#education">Ceramic</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#pricing">Menu</a>
+      <a href="#about">About</a>
+    </nav>
+
+    <div class="nav-cta">
+      <a class="btn btn-secondary" href="#pricing">View Menu</a>
+      <a class="btn btn-primary" href="#quote">Request a Quote</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<main id="top" class="hero">
+  <div class="container">
+    <section class="hero-shell" aria-label="Hero section">
+      <div class="hero-redbar"></div>
+
+      <div class="hero-grid">
+        <div class="hero-left">
+          <div class="hero-top">
+            <div class="badge" title="5-Star Rated">
+              <span class="stars">★★★★★</span>
+              <span>5-star rated on Google &amp; Yelp</span>
+              <span class="dot" aria-hidden="true"></span>
+            </div>
+            <div class="kicker">Houston, TX</div>
+          </div>
+
+          <div class="hero-h1 h1">
+            <span class="line1">PROTECT</span>
+            <span class="line2">PERFECT</span>
+            <span class="line3">your paint. forever.</span>
+          </div>
+
+          <p class="p lead hero-sub">
+            Clean work, fast replies, and a finish you’ll be proud of. We keep it simple and mobile-friendly.
+          </p>
+
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="#quote">
+              Request a Quote
+              <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <a class="btn btn-secondary" href="#pricing">See Menu</a>
+          </div>
+
+          <div class="hero-points" aria-label="Highlights">
+            <div class="point"><strong>Same-day reply</strong><span>Text back within hours</span></div>
+            <div class="point"><strong>Mobile available</strong><span>Across Houston area</span></div>
+            <div class="point"><strong>Quality first</strong><span>We treat every car like ours</span></div>
+          </div>
+
+          <div class="ticker" aria-label="Service ticker">
+            <div class="ticker-track">
+              <div class="ticker-item"><span class="ticker-dot"></span> Express Wash</div>
+              <div class="ticker-item"><span class="ticker-dot"></span> Premium Wash</div>
+              <div class="ticker-item"><span class="ticker-dot"></span> Ceramic Wash</div>
+              <div class="ticker-item"><span class="ticker-dot"></span> Wax / Sealant</div>
+              <div class="ticker-item"><span class="ticker-dot"></span> Add-ons</div>
+
+              <div class="ticker-item"><span class="ticker-dot"></span> Express Wash</div>
+              <div class="ticker-item"><span class="ticker-dot"></span> Premium Wash</div>
+              <div class="ticker-item"><span class="ticker-dot"></span> Ceramic Wash</div>
+              <div class="ticker-item"><span class="ticker-dot"></span> Wax / Sealant</div>
+              <div class="ticker-item"><span class="ticker-dot"></span> Add-ons</div>
+            </div>
+          </div>
+
+          <div class="stats" aria-label="Quick stats">
+            <div class="stat">
+              <div class="num" data-target="2" data-suffix=" hr">0 hr</div>
+              <div class="lbl">Typical reply time</div>
+            </div>
+            <div class="stat">
+              <div class="num" data-target="5" data-suffix="★">0★</div>
+              <div class="lbl">Customer rating</div>
+            </div>
+            <div class="stat">
+              <div class="num" data-target="200" data-suffix="+">0+</div>
+              <div class="lbl">Cars served</div>
+            </div>
+            <div class="stat">
+              <div class="num" data-target="100" data-suffix="%">0%</div>
+              <div class="lbl">Satisfaction</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-right" aria-label="Hero media">
+          <div class="hero-media">
+            <div class="pill">Swap this for an animated video of you working</div>
+            <div style="font-size: 13px; line-height: 1.7;">
+              Keep it compressed so mobile loads fast.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<!-- EDUCATION -->
+<section id="education" class="section">
+  <div class="container">
+    <div class="grid-2">
+      <div>
+        <div class="kicker">The Science</div>
+        <h2 class="h2" style="margin-top: 10px;">What is ceramic <em>coating?</em></h2>
+        <p class="p" style="margin-top: 12px;">
+          Ceramic coating is a liquid polymer that bonds to your paint, creating a durable protective layer.
+          It helps resist UV damage, grime, and chemical contaminants — and makes washing easier.
+        </p>
+      </div>
+
+      <div class="card soft" style="padding: 26px;">
+        <h3 style="font-family:var(--font-display); font-weight:900; letter-spacing:0.06em; text-transform:uppercase; font-size:0.95rem;">
+          What you’ll notice
+        </h3>
+        <p class="p" style="margin-top: 10px;">
+          Deeper gloss, easier washes, and paint that stays cleaner longer.
+        </p>
+      </div>
+    </div>
+
+    <div class="benefits" aria-label="Benefits">
+      <div class="benefit">
+        <div class="mini" aria-hidden="true">
+          <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2"/></svg>
+        </div>
+        <strong>Hydrophobic</strong>
+        <span>Water and dirt bead off so washes take less time.</span>
+      </div>
+
+      <div class="benefit">
+        <div class="mini" aria-hidden="true">
+          <svg class="icon" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/><path d="M12 1v2M12 21v2M1 12h2M21 12h2" stroke="currentColor" stroke-width="2"/></svg>
+        </div>
+        <strong>UV resistance</strong>
+        <span>Helps reduce fading and oxidation from sun exposure.</span>
+      </div>
+
+      <div class="benefit">
+        <div class="mini" aria-hidden="true">
+          <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" stroke-width="2"/></svg>
+        </div>
+        <strong>Mirror gloss</strong>
+        <span>Enhances clarity for a “wet look” finish.</span>
+      </div>
+
+      <div class="benefit">
+        <div class="mini" aria-hidden="true">
+          <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2"/></svg>
+        </div>
+        <strong>Protection</strong>
+        <span>Helps resist light swirls and common contaminants.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="section-tight">
+  <div class="container">
+    <div class="gallery-head">
+      <div>
+        <div class="kicker">The Transformation</div>
+        <h2 class="h2" style="margin-top: 10px;">See the <em>difference.</em></h2>
+      </div>
+      <div class="gallery-hint">
+        Drag to explore
+        <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="gallery" id="galScroll" aria-label="Horizontal gallery">
+      <article class="gcard">
+        <div class="gimg"><div class="gstep">Step 01</div>Damaged paint photo</div>
+        <div class="gbody"><h4>Damaged paint</h4><p>Swirls, oxidation, water spots — the starting point.</p></div>
+      </article>
+
+      <article class="gcard">
+        <div class="gimg"><div class="gstep">Step 02</div>Paint corrected photo</div>
+        <div class="gbody"><h4>Paint corrected</h4><p>Defects reduced and clarity restored with polishing.</p></div>
+      </article>
+
+      <article class="gcard">
+        <div class="gimg"><div class="gstep">Step 03</div>Corrected + ceramic photo</div>
+        <div class="gbody"><h4>Corrected + ceramic</h4><p>Enhanced gloss with protection for easier maintenance.</p></div>
+      </article>
+
+      <article class="gcard">
+        <div class="gimg" style="background: linear-gradient(135deg, rgba(232,0,61,0.10), #ffffff 70%); color: var(--text);">
+          <div class="gstep">Next</div>Your car
+        </div>
+        <div class="gbody">
+          <h4>Want yours next?</h4>
+          <p>Request a quote and we’ll text you back the same day.</p>
+          <div style="margin-top: 12px;">
+            <a class="btn btn-primary" href="#quote" style="width: 100%;">Request a Quote</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+  <div class="container about-wrap">
+    <div class="card" style="padding: 26px;">
+      <div class="kicker">Our Story</div>
+      <h2 class="h2" style="margin-top: 10px;">Two brothers. <em>One craft.</em></h2>
+      <p class="p" style="margin-top: 12px;">
+        Started in a driveway with a buffer and way too much time watching detailing videos.
+        We turned that obsession into Phamo’s Wash and Detailing — built on one rule: treat every car like it’s our own.
+      </p>
+      <p class="p" style="margin-top: 12px;">
+        No franchise. No shortcuts. When you hand us your keys, we handle it personally — every time.
+      </p>
+      <div style="margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border); color: rgba(16,17,20,0.72);">
+        <span style="font-family:var(--font-italic); font-style:italic; font-size: 18px;">— Your Names</span>
+        <div style="font-family:var(--font-display); font-weight:900; letter-spacing:0.18em; text-transform:uppercase; font-size: 0.62rem; color: var(--muted); margin-top: 6px;">
+          Founders · Houston, TX
+        </div>
+      </div>
+    </div>
+
+    <div class="card about-photo">
+      <div class="media-placeholder">
+        <div class="pill">Add a photo of you &amp; your brother</div>
+        <div style="font-size: 13px; line-height: 1.7;">This section builds trust fast.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU (CLEAN + ONE CTA) -->
+<section id="pricing" class="section-tight">
+  <div class="container">
+    <div class="menu-head">
+      <div>
+        <div class="kicker">Menu</div>
+        <h2 class="h2" style="margin-top: 10px;">Services <em>we offer.</em></h2>
+      </div>
+
+      <div style="display:grid; gap:10px; justify-items:end;">
+        <div class="menu-note">
+          Prices vary by vehicle size and condition. Send a quick request and we’ll text you a quote.
+        </div>
+        <!-- ONE button only (requested) -->
+        <a class="btn btn-primary" href="#quote">Request a Quote</a>
+      </div>
+    </div>
+
+    <div class="menu-grid" aria-label="Service menu grid">
+      <div class="card menu-card">
+        <div class="menu-top">
+          <div>
+            <div class="menu-title">Express Wash</div>
+            <div class="menu-sub">Quick wash &amp; dry. Simple and clean.</div>
+          </div>
+        </div>
+        <ul class="menu-list">
+          <li>Exterior hand wash</li>
+          <li>Rinse &amp; dry</li>
+          <li>Light finishing touches</li>
+        </ul>
+        <div class="menu-meta">
+          <span class="tag">Sedan / Coupe</span>
+          <span class="tag">SUV / Truck</span>
+          <span class="tag">XL Vehicles</span>
+        </div>
+      </div>
+
+      <div class="card menu-card" style="border-color: rgba(232,0,61,0.20);">
+        <div class="menu-top">
+          <div>
+            <div class="menu-title">Premium Wash</div>
+            <div class="menu-sub">“Almost perfect” wash with a deeper clean.</div>
+          </div>
+          <div class="bad-pill">Popular</div>
+        </div>
+        <ul class="menu-list">
+          <li>More detailed exterior wash</li>
+          <li>Extra attention to buildup areas</li>
+          <li>Cleaner finish &amp; better shine</li>
+        </ul>
+        <div class="menu-meta">
+          <span class="tag">Best for weekly</span>
+          <span class="tag">Daily drivers</span>
+          <span class="tag">Event-ready</span>
+        </div>
+      </div>
+
+      <div class="card menu-card" style="border-color: rgba(232,0,61,0.20);">
+        <div class="menu-top">
+          <div>
+            <div class="menu-title">Ceramic Wash</div>
+            <div class="menu-sub">For coated vehicles. Safe, proper maintenance.</div>
+          </div>
+          <div class="bad-pill">Popular</div>
+        </div>
+        <ul class="menu-list">
+          <li>Ceramic-safe wash approach</li>
+          <li>Helps maintain coating performance</li>
+          <li>Leaves a clean, glossy finish</li>
+        </ul>
+        <div class="menu-meta">
+          <span class="tag">Coated cars</span>
+          <span class="tag">Maintenance</span>
+          <span class="tag">Gloss focus</span>
+        </div>
+      </div>
+
+      <div class="card menu-card">
+        <div class="menu-top">
+          <div>
+            <div class="menu-title">Wax / Sealant</div>
+            <div class="menu-sub">Wash + clay + wax/sealant for added protection.</div>
+          </div>
+        </div>
+        <ul class="menu-list">
+          <li>Wash, clay, dry</li>
+          <li>Wax or sealant application</li>
+          <li>Protection typically 3–6 months</li>
+        </ul>
+        <div class="menu-meta">
+          <span class="tag">Protection layer</span>
+          <span class="tag">Seasonal refresh</span>
+          <span class="tag">Extra shine</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card soft addons" aria-label="Add-ons section">
+      <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+        <div style="font-family:var(--font-display); font-weight:900; letter-spacing:0.12em; text-transform:uppercase; font-size:0.78rem;">
+          Add-ons
+        </div>
+        <div class="kicker" style="letter-spacing:0.18em; color: rgba(16,17,20,0.55);">Optional upgrades</div>
+      </div>
+      <div class="chips">
+        <span class="chip">Vacuum (varies by size)</span>
+        <span class="chip">Interior wipe down</span>
+        <span class="chip">Leather treatment</span>
+        <span class="chip">Ceramic windows only</span>
+        <span class="chip">Ceramic coat wheels</span>
+        <span class="chip">Headlight restoration</span>
+        <span class="chip">Ceramic coat interior</span>
+        <span class="chip">Engine detailing (ask)</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section id="quote" class="section">
+  <div class="container form-wrap">
+    <div class="card soft" style="padding: 26px;">
+      <div class="kicker">No Obligation</div>
+      <h2 class="h2" style="margin-top: 10px;">Request a <em>quote.</em></h2>
+      <p class="p" style="margin-top: 12px;">
+        Three quick steps. We’ll text you back within hours — usually the same day.
+      </p>
+      <div style="margin-top: 16px; display:grid; gap: 10px; color: var(--muted); font-size: 14px; line-height: 1.7;">
+        <div><span style="color:var(--red); font-weight:700;">•</span> Reply within 2 hours</div>
+        <div><span style="color:var(--red); font-weight:700;">•</span> 100% free, zero obligation</div>
+        <div><span style="color:var(--red); font-weight:700;">•</span> Mobile service across Houston</div>
+        <div><span style="color:var(--red); font-weight:700;">•</span> Your info stays private</div>
+      </div>
+    </div>
+
+    <div class="card form" aria-label="Quote form">
+      <div class="progress">
+        <div class="pstep active" id="ps1" onclick="goToStep(1)"><div class="pnum">1</div><div>Your vehicle</div></div>
+        <div class="pstep" id="ps2" onclick="goToStep(2)"><div class="pnum">2</div><div>Contact</div></div>
+        <div class="pstep" id="ps3" onclick="goToStep(3)"><div class="pnum">3</div><div>Details</div></div>
+      </div>
+
+      <div class="form-body">
+        <!-- Step 1 -->
+        <div class="step active" id="step1">
+          <h3>Your vehicle</h3>
+          <p>Basic details so we can quote it correctly.</p>
+
+          <div class="field-grid">
+            <div class="field"><label>Make *</label><input class="input" id="q-make" placeholder="e.g. Toyota" required /></div>
+            <div class="field"><label>Model *</label><input class="input" id="q-model" placeholder="e.g. Camry" required /></div>
+          </div>
+
+          <div class="field-grid">
+            <div class="field"><label>Year *</label><input class="input" id="q-year" type="number" min="1980" max="2026" placeholder="2021" required /></div>
+            <div class="field"><label>Color</label><input class="input" id="q-color" placeholder="e.g. Black" /></div>
+          </div>
+
+          <div class="help">* Required fields</div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step" id="step2">
+          <h3>Contact</h3>
+          <p>We’ll text you back. Email is optional.</p>
+
+          <div class="field-grid">
+            <div class="field"><label>Full name *</label><input class="input" id="q-name" placeholder="John Smith" required /></div>
+            <div class="field"><label>Phone *</label><input class="input" id="q-phone" placeholder="(555) 000-0000" required /></div>
+          </div>
+
+          <div class="field-grid one">
+            <div class="field"><label>Email (optional)</label><input class="input" id="q-email" type="email" placeholder="john@example.com" /></div>
+          </div>
+
+          <div class="help">We never share your info.</div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step" id="step3">
+          <h3>Details</h3>
+          <p>Pick a service and add any notes.</p>
+
+          <div class="field-grid one">
+            <div class="field">
+              <label>Service</label>
+              <select class="select" id="q-service">
+                <option value="">— Choose —</option>
+                <option>Express Wash</option>
+                <option>Premium Wash</option>
+                <option>Ceramic Wash</option>
+                <option>Wax / Sealant</option>
+                <option>Not Sure — Just Quote Me</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field-grid one">
+            <div class="field">
+              <label>Notes</label>
+              <textarea class="textarea" id="q-notes" placeholder="Scratches, water spots, add-ons you want, etc."></textarea>
+            </div>
+          </div>
+
+          <div class="help">Want add-ons? List them in Notes.</div>
+        </div>
+      </div>
+
+      <div class="form-nav">
+        <div class="dots" aria-label="Step indicator">
+          <div class="dot active" id="d1"></div>
+          <div class="dot" id="d2"></div>
+          <div class="dot" id="d3"></div>
+        </div>
+
+        <div style="display:flex; gap:10px; align-items:center;">
+          <button class="btn-link" id="backBtn" onclick="prevStep()" style="display:none;">Back</button>
+          <button class="btn btn-primary" id="nextBtn" onclick="nextStep()">Next</button>
+        </div>
+      </div>
+
+      <div class="success" id="success">
+        <div class="check" aria-hidden="true">
+          <svg class="icon" viewBox="0 0 24 24" fill="none">
+            <path d="M20 6L9 17l-5-5" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Request received</h3>
+        <p>We’ll text you back within a few hours (usually same day).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom: 10px;">
+          <img
+            class="brand-logo"
+            alt="Phamo's Detailing logo"
+            src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAlgCWAAD/4RCURXhpZgAA..."
+          />
+        </div>
+        <p>Professional washes, ceramic maintenance, and paint protection for Houston drivers who care.</p>
+      </div>
+
+      <div>
+        <h4>Explore</h4>
+        <div style="display:grid; gap:10px; margin-top: 12px;">
+          <a href="#education">Ceramic</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#pricing">Menu</a>
+          <a href="#quote">Request a quote</a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <div style="display:grid; gap:10px; margin-top: 12px;">
+          <a href="tel:+2813239855">(281) 323-9855</a>
+          <a href="mailto:quote@phamosdetailing.com">quote@phamosdetailing.com</a>
+          <span style="color: var(--muted); font-size: 14px;">Houston, TX</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2026 Phamo’s Wash and Detailing. All rights reserved.</div>
+      <div>★★★★★ 5-star rated · Google &amp; Yelp</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* NOTE:
+   I shortened the embedded logo data URL in this chat with "...".
+   To make it actually work as a single-file HTML, you need the FULL base64 string.
+   If you want, paste your original logo file name and I’ll give you the full data URL version.
+*/
+
+/* Counter animation (once) */
+function animateCounter(el){
+  const target = parseInt(el.dataset.target || "0", 10);
+  const suffix = el.dataset.suffix || "";
+  const duration = 1200;
+  const startTime = performance.now();
+
+  function tick(now){
+    const t = Math.min((now - startTime) / duration, 1);
+    const eased = 1 - Math.pow(1 - t, 3);
+    const value = Math.round(eased * target);
+    el.textContent = value + suffix;
+    if (t < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+const counterObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting){
+      animateCounter(e.target);
+      counterObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.6 });
+document.querySelectorAll('.num[data-target]').forEach(el => counterObs.observe(el));
+
+/* Drag scroll gallery */
+const gal = document.getElementById('galScroll');
+let isDown = false, startX = 0, scrollLeft = 0;
+if (gal){
+  gal.addEventListener('mousedown', (e) => {
+    isDown = true;
+    startX = e.pageX - gal.offsetLeft;
+    scrollLeft = gal.scrollLeft;
+  });
+  gal.addEventListener('mouseleave', () => isDown = false);
+  gal.addEventListener('mouseup', () => isDown = false);
+  gal.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - gal.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    gal.scrollLeft = scrollLeft - walk;
+  });
+}
+
+/* Form stepper */
+let step = 1;
+
+function setStep(n){
+  step = n;
+  document.querySelectorAll('.step').forEach((s, i) => s.classList.toggle('active', i + 1 === step));
+
+  const ps1 = document.getElementById('ps1');
+  const ps2 = document.getElementById('ps2');
+  const ps3 = document.getElementById('ps3');
+  [ps1, ps2, ps3].forEach(el => el.classList.remove('active', 'done'));
+  if (step === 1) ps1.classList.add('active');
+  if (step === 2){ ps1.classList.add('done'); ps2.classList.add('active'); }
+  if (step === 3){ ps1.classList.add('done'); ps2.classList.add('done'); ps3.classList.add('active'); }
+
+  document.getElementById('d1').classList.toggle('active', step === 1);
+  document.getElementById('d2').classList.toggle('active', step === 2);
+  document.getElementById('d3').classList.toggle('active', step === 3);
+
+  const backBtn = document.getElementById('backBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  backBtn.style.display = step === 1 ? 'none' : 'inline-flex';
+  nextBtn.textContent = step === 3 ? 'Send' : 'Next';
+}
+
+function goToStep(n){
+  if (n > step) return;
+  setStep(n);
+}
+
+function markInvalid(el){
+  el.style.borderColor = 'rgba(255,59,48,0.55)';
+  el.style.boxShadow = '0 0 0 4px rgba(255,59,48,0.12)';
+}
+function clearInvalid(el){ el.style.borderColor = ''; el.style.boxShadow = ''; }
+
+function validateStep(){
+  let ok = true;
+
+  if (step === 1){
+    const make = document.getElementById('q-make');
+    const model = document.getElementById('q-model');
+    const year = document.getElementById('q-year');
+    [make, model, year].forEach(el => {
+      if (!el.value.trim()){ ok = false; markInvalid(el); }
+      else clearInvalid(el);
+    });
+  }
+
+  if (step === 2){
+    const name = document.getElementById('q-name');
+    const phone = document.getElementById('q-phone');
+    [name, phone].forEach(el => {
+      if (!el.value.trim()){ ok = false; markInvalid(el); }
+      else clearInvalid(el);
+    });
+  }
+
+  return ok;
+}
+
+function nextStep(){
+  if (!validateStep()) return;
+
+  if (step < 3){
+    setStep(step + 1);
+    return;
+  }
+
+  document.querySelector('.progress').style.display = 'none';
+  document.querySelector('.form-body').style.display = 'none';
+  document.querySelector('.form-nav').style.display = 'none';
+  document.getElementById('success').style.display = 'block';
+
+  // payload to wire into SMS later
+  const payload = {
+    make: document.getElementById('q-make').value.trim(),
+    model: document.getElementById('q-model').value.trim(),
+    year: document.getElementById('q-year').value.trim(),
+    color: document.getElementById('q-color').value.trim(),
+    name: document.getElementById('q-name').value.trim(),
+    phone: document.getElementById('q-phone').value.trim(),
+    email: document.getElementById('q-email').value.trim(),
+    service: document.getElementById('q-service').value.trim(),
+    notes: document.getElementById('q-notes').value.trim(),
+  };
+  console.log("Quote request payload:", payload);
+}
+
+function prevStep(){
+  if (step > 1) setStep(step - 1);
+}
+
+/* Phone formatting */
+const phone = document.getElementById('q-phone');
+if (phone){
+  phone.addEventListener('input', function(e){
+    let v = e.target.value.replace(/\D/g, '').slice(0, 10);
+    if (v.length >= 7) v = `(${v.slice(0,3)}) ${v.slice(3,6)}-${v.slice(6,10)}`;
+    else if (v.length >= 4) v = `(${v.slice(0,3)}) ${v.slice(3)}`;
+    else if (v.length >= 1) v = `(${v}`;
+    e.target.value = v;
+  });
+}
+
+setStep(1);
+</script>
+
+</body>
+</html>
