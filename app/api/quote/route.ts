@@ -14,6 +14,18 @@ type QuotePayload = {
   contacted?: string;
 };
 
+type DeliveryResult =
+  | { channel: "google_sheets" | "email"; ok: true }
+  | { channel: "google_sheets" | "email"; ok: false; error: string };
+
+function deliverySucceeded(channel: DeliveryResult["channel"]): DeliveryResult {
+  return { channel, ok: true };
+}
+
+function deliveryFailed(channel: DeliveryResult["channel"], error: unknown): DeliveryResult {
+  return { channel, ok: false, error: summarizeError(error) };
+}
+
 function clean(value: unknown) {
   if (typeof value !== "string") {
     return "";
@@ -175,13 +187,9 @@ export async function POST(request: Request) {
     const channels: string[] = [];
     const failures: string[] = [];
 
-    const [sheetsResult, emailResult] = await Promise.all([
-      postToGoogleSheets(payload)
-        .then(() => ({ channel: "google_sheets" as const, ok: true }))
-        .catch((error) => ({ channel: "google_sheets" as const, ok: false, error: summarizeError(error) })),
-      sendEmailNotification(payload)
-        .then(() => ({ channel: "email" as const, ok: true }))
-        .catch((error) => ({ channel: "email" as const, ok: false, error: summarizeError(error) })),
+    const [sheetsResult, emailResult]: [DeliveryResult, DeliveryResult] = await Promise.all([
+      postToGoogleSheets(payload).then(() => deliverySucceeded("google_sheets")).catch((error) => deliveryFailed("google_sheets", error)),
+      sendEmailNotification(payload).then(() => deliverySucceeded("email")).catch((error) => deliveryFailed("email", error)),
     ]);
 
     if (sheetsResult.ok) {
