@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { About } from "@/components/home/sections/About";
 import { Education } from "@/components/home/sections/Education";
 import { Faq } from "@/components/home/sections/Faq";
@@ -19,7 +20,9 @@ export default function Home() {
       <Gallery />
       <About />
       <Pricing />
-      <Quote />
+      <Suspense fallback={null}>
+        <Quote />
+      </Suspense>
       <Faq />
       <Footer />
     </>
