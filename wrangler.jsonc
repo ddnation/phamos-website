@@ -8,6 +8,16 @@
     "directory": ".open-next/assets",
     "binding": "ASSETS"
   },
+  "routes": [
+    {
+      "pattern": "phamosdetailing.com",
+      "custom_domain": true
+    },
+    {
+      "pattern": "www.phamosdetailing.com",
+      "custom_domain": true
+    }
+  ],
   "preview_urls": true,
   "observability": {
     "enabled": true
