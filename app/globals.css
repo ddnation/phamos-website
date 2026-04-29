@@ -218,8 +218,8 @@ textarea {
 }
 
 .brand-logo {
-  width: auto;
-  height: 44px;
+  width: 200px;
+  height: auto;
   object-fit: contain;
 }
 
@@ -1780,7 +1780,8 @@ textarea {
   }
 
   .brand-logo {
-    height: 40px;
+    width: 182px;
+    height: auto;
   }
 
   .nav-cta {

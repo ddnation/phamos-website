@@ -11,7 +11,7 @@ export function Header() {
             src="/phamos-logo.svg"
             alt="Phamo's Detailing logo"
             width={200}
-            height={44}
+            height={38}
             priority
           />
         </a>

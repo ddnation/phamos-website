@@ -35,6 +35,7 @@ export function About() {
             fill
             sizes="(max-width: 980px) 100vw, 40vw"
             className="about-photo-image"
+            loading="eager"
           />
         </div>
       </div>

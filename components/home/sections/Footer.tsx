@@ -13,7 +13,7 @@ export function Footer() {
                 src="/phamos-logo.svg"
                 alt="Phamo's Detailing logo"
                 width={200}
-                height={44}
+                height={38}
               />
             </div>
             <p>
