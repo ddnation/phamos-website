@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     siteName: "Phamo's Wash and Detailing",
     images: [
       {
-        url: "https://phamosdetailing.com/phamos-logo-with-car.jpg",
+        url: "https://phamosdetailing.com/phamos-detailing-logo-thumbnail.jpg",
         width: 750,
         height: 723,
         alt: "Phamo's Wash and Detailing logo with car",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     title: "Phamo's Wash and Detailing | Houston, TX",
     description:
       "Professional drop-off detailing in Houston. Ceramic-safe washes, paint protection, and same-day quote replies.",
-    images: ["https://phamosdetailing.com/phamos-logo-with-car.jpg"],
+    images: ["https://phamosdetailing.com/phamos-detailing-logo-thumbnail.jpg"],
   },
 };
 

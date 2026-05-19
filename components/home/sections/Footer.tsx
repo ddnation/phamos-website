@@ -37,7 +37,11 @@ export function Footer() {
             <div className="footer-links">
               <a href="tel:+2813239855">(281) 323-9855</a>
               <a href="mailto:quote@phamosdetailing.com">quote@phamosdetailing.com</a>
-              <span className="footer-location">Houston, TX</span>
+              <address className="footer-location">
+                19333 West Little York Rd
+                <br />
+                Katy, TX 77449
+              </address>
             </div>
           </div>
         </div>

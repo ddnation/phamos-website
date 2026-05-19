@@ -1652,7 +1652,11 @@ textarea {
 }
 
 .footer-location {
-  color: var(--muted);
+  margin: 0;
+  font-family: inherit;
+  font-style: normal;
+  line-height: inherit;
+  color: inherit;
   font-size: 14px;
 }
 
