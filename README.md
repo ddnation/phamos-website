@@ -32,7 +32,7 @@ GOOGLE_SHEETS_WEBHOOK_URL=https://script.google.com/macros/s/AKfycbyvqci2ooOINlo
 
 # Option 2 (optional): Email notification via Resend
 RESEND_API_KEY=re_xxxxx
-QUOTE_NOTIFICATION_EMAIL=you@example.com
+QUOTE_NOTIFICATION_EMAIL=you@example.com,second@example.com
 QUOTE_FROM_EMAIL=onboarding@resend.dev
 ```
 

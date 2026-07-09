@@ -121,9 +121,12 @@ async function postToGoogleSheets(payload: QuotePayload) {
 
 async function sendEmailNotification(payload: QuotePayload) {
   const apiKey = process.env.RESEND_API_KEY;
-  const toEmail = process.env.QUOTE_NOTIFICATION_EMAIL;
+  const toEmails = (process.env.QUOTE_NOTIFICATION_EMAIL || "")
+    .split(",")
+    .map((email) => email.trim())
+    .filter(Boolean);
 
-  if (!apiKey || !toEmail) {
+  if (!apiKey || toEmails.length === 0) {
     return false;
   }
 
@@ -147,7 +150,7 @@ async function sendEmailNotification(payload: QuotePayload) {
     },
     body: JSON.stringify({
       from: fromEmail,
-      to: [toEmail],
+      to: toEmails,
       subject,
       text: lines.join("\n"),
     }),
