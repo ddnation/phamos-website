@@ -17,7 +17,7 @@ export function Footer() {
               />
             </div>
             <p>
-              Professional washes, ceramic maintenance, and paint protection for Houston drivers who care.
+              Professional washes, ceramic tint, wraps, PPF, and paint protection for Houston drivers who care.
             </p>
           </div>
 

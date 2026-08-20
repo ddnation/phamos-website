@@ -80,10 +80,10 @@ export function GalleryRail({ items, showCta = false }: GalleryRailProps) {
           </div>
           <div className="gbody">
             <h4>Want yours next?</h4>
-            <p>Request a quote and we&apos;ll text you back the same day.</p>
+            <p>Call for a quote or fill out our inquiry form and we&apos;ll text you back the same day.</p>
             <div className="gcard-cta">
               <a className="btn btn-primary full" href="#quote">
-                Request a Quote
+                Fill Out Inquiry
                 <ArrowRightIcon className="icon" />
               </a>
             </div>

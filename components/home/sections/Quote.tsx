@@ -31,8 +31,8 @@ const initialForm: QuotePayload = {
   notes: "",
 };
 
-const QUOTE_PHONE_DISPLAY = "(713) 555-0000";
-const QUOTE_PHONE_TEL = "+17135550000";
+const QUOTE_PHONE_DISPLAY = "(281) 323-9855";
+const QUOTE_PHONE_TEL = "+12813239855";
 const SUBMIT_FAILURE_MESSAGE =
   "There was an issue submitting your quote. Please try again, or call us for a quote.";
 
@@ -166,7 +166,7 @@ export function Quote() {
       <div className="container form-wrap">
         <div className="card soft quote-copy">
           <div className="kicker">No Obligation</div>
-          <h2 className="h2 section-title">Request a <em>quote.</em></h2>
+          <h2 className="h2 section-title">Fill out our <em>inquiry.</em></h2>
           <p className="p section-copy">
             Three quick steps. We&apos;ll text you back within hours, usually the same day.
           </p>
@@ -178,7 +178,7 @@ export function Quote() {
           </div>
         </div>
 
-        <form className="card form" aria-label="Quote form" onSubmit={onSubmit}>
+        <form className="card form" aria-label="Inquiry form" onSubmit={onSubmit}>
           {!submitted ? (
             <>
               <div className="progress">
@@ -385,7 +385,7 @@ export function Quote() {
                   <p>
                     Call{" "}
                     <a href={`tel:${QUOTE_PHONE_TEL}`}>{QUOTE_PHONE_DISPLAY}</a>{" "}
-                    to request a quote by phone.
+                    for a quote by phone.
                   </p>
                 </div>
               ) : null}
@@ -395,7 +395,7 @@ export function Quote() {
               <div className="check" aria-hidden="true">
                 <CheckIcon className="icon" />
               </div>
-              <h3>Request received</h3>
+              <h3>Inquiry received</h3>
               <p>We&apos;ll text you back within a few hours, usually same day.</p>
             </div>
           )}

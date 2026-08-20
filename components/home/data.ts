@@ -1,7 +1,7 @@
 export const navLinks = [
   { label: "Ceramic", href: "#education" },
   { label: "Gallery", href: "#gallery" },
-  { label: "Menu", href: "#pricing" },
+  { label: "Services", href: "#pricing" },
   { label: "About", href: "#about" },
 ] as const;
 
@@ -24,8 +24,8 @@ export const tickerItems = [
   "Express Wash",
   "Premium Wash",
   "Ceramic Wash",
-  "Wax / Sealant",
-  "Add-ons",
+  "Ceramic Tint",
+  "Wraps & PPF",
 ] as const;
 
 export const stats = [
@@ -119,11 +119,6 @@ export const services = [
     title: "Express Wash",
     subtitle: "Quick wash and dry. Simple and clean.",
     items: ["Exterior hand wash", "Rinse and dry", "Light finishing touches"],
-    priceTiers: [
-      { label: "Sedan / Coupe", price: "$50" },
-      { label: "SUV / Truck", price: "$75" },
-      { label: "XL Vehicles", price: "$100" },
-    ],
     featured: false,
   },
   {
@@ -133,11 +128,6 @@ export const services = [
       "More detailed exterior wash",
       "Extra attention to buildup areas",
       "Cleaner finish and better shine",
-    ],
-    priceTiers: [
-      { label: "Sedan / Coupe", price: "$100" },
-      { label: "SUV / Truck", price: "$125" },
-      { label: "XL Vehicles", price: "$150" },
     ],
     featured: true,
   },
@@ -149,11 +139,6 @@ export const services = [
       "Helps maintain coating performance",
       "Leaves a clean, glossy finish",
     ],
-    priceTiers: [
-      { label: "Sedan / Coupe", price: "$150" },
-      { label: "SUV / Truck", price: "$175" },
-      { label: "XL Vehicles", price: "$200" },
-    ],
     featured: true,
   },
   {
@@ -164,16 +149,21 @@ export const services = [
       "Wax or sealant application",
       "Protection typically 3-6 months",
     ],
-    priceTiers: [
-      { label: "Sedan / Coupe", price: "$350" },
-      { label: "SUV / Truck", price: "$475" },
-      { label: "XL Vehicles", price: "$600" },
-    ],
     featured: false,
   },
+  {
+    title: "Ceramic Tint",
+    subtitle: "Heat rejection, UV protection, and a clean finish.",
+    items: ["Premium ceramic film", "UV and heat protection", "Professional installation"],
+    featured: true,
+  },
+  {
+    title: "Wraps & PPF",
+    subtitle: "Style changes and physical paint protection.",
+    items: ["Custom vinyl wraps", "Paint protection film", "Protection for high-impact areas"],
+    featured: true,
+  },
 ] as const;
-
-export const vehicleSizes = ["Sedan / Coupe", "SUV / Truck", "XL Vehicles"] as const;
 
 export const ceramicCoatingTiers = [
   {
@@ -182,11 +172,6 @@ export const ceramicCoatingTiers = [
     description: "Entry package for strong shine and short-term ceramic protection.",
     process:
       "Decon wash, clay, deironize, 1-step paint correction, isopropyl wipe, 1-2 year coating",
-    priceTiers: [
-      { label: "Sedan / Coupe", price: "$749 - $849" },
-      { label: "SUV / Truck", price: "$999 - $1,199" },
-      { label: "XL Vehicles", price: "$1,299 - $1,399" },
-    ],
     featured: false,
   },
   {
@@ -195,11 +180,6 @@ export const ceramicCoatingTiers = [
     description: "Best value long-term option with deeper correction and durable coating.",
     process:
       "Decon wash, clay, deironize, 1-step paint correction, isopropyl wipe, 5-7 year coating",
-    priceTiers: [
-      { label: "Sedan / Coupe", price: "$999 - $1,199" },
-      { label: "SUV / Truck", price: "$1,299 - $1,399" },
-      { label: "XL Vehicles", price: "$1,499 - $1,699" },
-    ],
     featured: true,
   },
   {
@@ -208,24 +188,22 @@ export const ceramicCoatingTiers = [
     description: "Highest-level correction and coating package for maximum gloss and depth.",
     process:
       "Decon wash, clay, deironize, 2-step paint correction, isopropyl wipe, 5-7 year coating",
-    priceTiers: [
-      { label: "Sedan / Coupe", price: "$1,299 - $1,399" },
-      { label: "SUV / Truck", price: "$1,499 - $1,699" },
-      { label: "XL Vehicles", price: "$1,899 +" },
-    ],
     featured: false,
   },
 ] as const;
 
 export const addOns = [
-  "Vacuum (price varies by size)",
+  "Vacuum",
   "Interior wipe down",
   "Leather treatment",
-  "Ceramic windows only (+$100)",
-  "Ceramic coat wheels (+$200)",
-  "Headlight restoration (+$150)",
-  "Ceramic coat interior (+$500-$2000)",
+  "Ceramic window coating",
+  "Ceramic wheel coating",
+  "Headlight restoration",
+  "Ceramic interior coating",
   "Engine detailing",
+  "Ceramic tint",
+  "Vinyl wraps",
+  "Paint protection film (PPF)",
 ] as const;
 
 export const serviceOptions = [
@@ -233,14 +211,16 @@ export const serviceOptions = [
   "Premium Wash",
   "Ceramic Wash",
   "Wax / Sealant",
+  "Ceramic Tint",
+  "Wraps & PPF",
   "Not Sure - Just Quote Me",
 ] as const;
 
 export const footerLinks = [
   { label: "Ceramic", href: "#education" },
   { label: "Gallery", href: "#gallery" },
-  { label: "Menu", href: "#pricing" },
-  { label: "Request a quote", href: "#quote" },
+  { label: "Services", href: "#pricing" },
+  { label: "Inquiry", href: "#quote" },
 ] as const;
 
 export const howItWorksSteps = [

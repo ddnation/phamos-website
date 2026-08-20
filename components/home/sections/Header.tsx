@@ -26,10 +26,10 @@ export function Header() {
 
         <div className="nav-cta">
           <a className="btn btn-secondary" href="#pricing">
-            View Menu
+            Services
           </a>
           <a className="btn btn-primary" href="#quote">
-            Request a Quote
+            Inquiry
           </a>
         </div>
       </div>

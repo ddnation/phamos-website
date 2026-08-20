@@ -48,16 +48,16 @@ export function Hero() {
 
               <p className="p lead hero-sub">
                 Clean work, fast replies, and a finish you&apos;ll be proud of. We keep it simple and
-                easy to book.
+                easy to book. Ask us about ceramic tint, wraps, and paint protection film (PPF).
               </p>
 
               <div className="hero-ctas">
                 <a className="btn btn-primary" href="#quote">
-                  Request a Quote
+                  Fill Out Inquiry
                   <ArrowRightIcon className="icon" />
                 </a>
                 <a className="btn btn-secondary" href="#pricing">
-                  See Menu
+                  View Services
                 </a>
               </div>
 
